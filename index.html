@@ -1,84 +1,69 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Talha - Fruit Slicer Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="icon" href="https://i.ibb.co/M6KTWnf/pic.jpg" />
 
+    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
+    <!-- Also uploaded the demo of this code in a gif : https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif-->
+    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
 
-<!-- Ultimate Game Stash file--> 
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-
-
-<html>
-<head>
-  <title>EaglercraftX</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    /* Sayfa ve oyun çerçevesi için temel düzenlemeler */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden; /* Sayfanın gereksiz kaymasını engeller */
-    }
-
-    #game_frame {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000; /* Arka plan rengi, isteğe bağlı */
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bubbls/loltheygotbannedfromjsdelivr@38f40924ae70b843f3d4d0a5dc3d6ba13ca3a461/classes.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bubbls/loltheygotbannedfromjsdelivr@38f40924ae70b843f3d4d0a5dc3d6ba13ca3a461/fix-webm-duration.js"></script>
-  <script type="text/javascript">
-    window.addEventListener('load', function () {
-      window.focus();
-      document.body.addEventListener('click', function (e) {
-        window.focus();
-      }, false);
-    });
-
-    window.addEventListener("load", () => {
-      if (document.location.href.startsWith("file:")) {
-        console.warn("HTTP required. Do not open this file locally, run it via a local HTTP server.");
-      } else {
-        // Default configuration for EaglercraftX
-        if (!window.eaglercraftXOpts) {
-          window.eaglercraftXOpts = {
-            container: "game_frame",
-            assetsURI: "https://cdn.jsdelivr.net/gh/bubbls/loltheygotbannedfromjsdelivr@38f40924ae70b843f3d4d0a5dc3d6ba13ca3a461/assets.epk",
-            localesURI: "lang/",
-            servers: [
-              { addr: "wss://mc.arch.lol/", name: "ArchMC" },
-              { addr: "wss://mc.asspixel.net", name: "AssPixel" },
-              { addr: "wss://sus.shhnowisnottheti.me", name: "Ayunboom" },
-              { addr: "wss://aeon-network.net/1.8", name: "Aeon" },
-              { addr: "wss://zentic.org/", name: "Zentic" }
-            ]
-          };
-        }
-        // Ensure container element exists
-        let container = document.querySelector(`#${window.eaglercraftXOpts.container}`);
-        if (!container) {
-          console.error("Container element not found. Creating a default one.");
-          container = document.createElement("div");
-          container.id = window.eaglercraftXOpts.container;
-          document.body.appendChild(container);
-        }
-        try {
-          main();
-        } catch (error) {
-          console.error("Error starting EaglercraftX:", error);
-        }
-      }
-    });
-  </script>
-</head>
-<body>
-  <!-- Ensure essential DOM elements exist -->
-  <div id="game_frame"></div>
-  <div class="_eaglercraftX_wrapper_element"></div>
-  <div id="_eaglercraftX_crashReason" style="display:none;"></div>
-  <div id="_eaglercraftX_crashUserAgent" style="display:none;"></div>
-</body>
+    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
+    <!-- More html-css-js Games Calculators Games Cards Elements Projects on https://www.github.com/he-is-talha -->
+    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
+  </head>
+  <body>
+    <div id="container">
+      <div id="instructions">
+        Slice Fruits
+      </div>
+      <div id="fruitcontainer">
+        <div id="score">
+          <div class="scoreDisplay">
+            <img
+              src="https://raw.githubusercontent.com/Saumya-07/Fruit-Slicer/master/images/scr.png"
+              alt=""
+            />
+            <span id="scoreValue">0</span>
+          </div>
+        </div>
+        <div id="trialsleft"></div>
+        <div id="front">
+          Are you ready for the ultimate slice action ? <br />
+          <img
+            src="https://raw.githubusercontent.com/Saumya-07/Fruit-Slicer/master/images/splash.png"
+            alt="Fruit logo"
+          />
+        </div>
+        <img id="fruit1" class="fruit" />
+      </div>
+      <div id="startReset">
+        Start Game
+      </div>
+      <!--for game over block-->
+      <div id="gameOver"></div>
+    </div>
+    <!--for audio files-->
+    <audio id="slicesound">
+      <source
+        src="https://github.com/Saumya-07/Fruit-Slicer/blob/master/audio/slicefruit.mp3"
+      />
+      <source
+        src="https://github.com/Saumya-07/Fruit-Slicer/blob/master/audio/slicefruit.ogg"
+      />
+      <source
+        src="https://github.com/Saumya-07/Fruit-Slicer/blob/master/audio/slicefruit.wav"
+      />
+    </audio>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
